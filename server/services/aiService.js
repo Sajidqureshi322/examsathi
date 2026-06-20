@@ -237,9 +237,6 @@ ${insightsContext}`;
 }
 
 export async function generateChatResponse(student, message, journals, moodLogs, chatHistory, insights = null) {
-  if (!genAI) {
-    return generateLocalChatResponse(student, message, journals, moodLogs);
-  }
 
   const systemPrompt = buildChatSystemPrompt(student, journals, moodLogs, insights);
 
